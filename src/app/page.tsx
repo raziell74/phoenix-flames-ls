@@ -146,10 +146,7 @@ export default function Home() {
 
       {/* Features Section */}
       <div className="overflow-hidden">
-        <div
-          
-          className="py-24"
-        >
+        <div className="py-24">
           <div className="container mx-auto px-4">
             <motion.div
               ref={section2Ref}
