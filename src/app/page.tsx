@@ -91,26 +91,30 @@ export default function Home() {
                   opacity: section1InView ? 1 : 0,
                   x: section1InView ? 0 : -100
                 }}
-                transition={{ duration: section1InView ? 0.8 : 0, ease: "easeOut", delay: section1InView ? 0.2 : 0 }}
+                transition={{ 
+                  duration: section1InView ? 0.8 : 0,
+                  ease: "easeOut",
+                  delay: section1InView ? 0.2 : 0
+                }}
               >
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
+                <t.h2 className="font-grenze">Our Legacy</t.h2>
+                <motion.p
+                  className="space-y-4 text-lg"
+                  initial={{ opacity: 0, x: -100 }}
                   animate={{ 
                     opacity: section1InView ? 1 : 0,
-                    y: section1InView ? 0 : -20
+                    x: section1InView ? 0 : -100
                   }}
                   transition={{ 
                     duration: section1InView ? 0.8 : 0,
                     ease: "easeOut",
+                    delay: section1InView ? 0.2 : 0 
                   }}
                 >
-                  <t.h2 className="font-grenze">Our Legacy</t.h2>
-                </motion.div>
-                <t.p className="text-lg">
-                  Founded in the realm of Alexandria, Phoenix Flames has grown into one of
-                  the most respected guilds in Final Fantasy IX. Our members come from all
-                  corners of Gaia, united by our passion for adventure and camaraderie.
-                </t.p>
+                    Founded in the realm of Alexandria, Phoenix Flames has grown into one of
+                    the most respected guilds in Final Fantasy IX. Our members come from all
+                    corners of Gaia, united by our passion for adventure and camaraderie.
+                </motion.p>
               </motion.div>
               <motion.div
                 className="relative overflow-hidden rounded-lg"
@@ -148,15 +152,15 @@ export default function Home() {
         >
           <div className="container mx-auto px-4">
             <motion.div
-              ref={section2Ref}
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -40 }}
               animate={{ 
                 opacity: section2InView ? 1 : 0,
-                y: section2InView ? 0 : -20
+                y: section2InView ? 0 : -40
               }}
               transition={{ 
                 duration: section2InView ? 0.8 : 0,
                 ease: "easeOut",
+                delay: section2InView ? 0.5 : 0
               }}
             >
               <t.h1 className="mb-12 text-center font-bold">
@@ -168,18 +172,18 @@ export default function Home() {
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  ref={section2Ref}
-                  initial={{ opacity: 0, y: -20 }}
+                  initial={{ opacity: 0, y: -40 }}
                   animate={{ 
                     opacity: section2InView ? 1 : 0,
-                    y: section2InView ? 0 : -20
+                    y: section2InView ? 0 : -40
                   }}
                   transition={{ 
                     duration: section2InView ? 0.8 : 0,
                     ease: "easeOut",
-                    delay: section2InView ? (0.5 + (index * 0.25)) : 0 
+                    delay: section2InView ? (0.5 + ((index + 1) * 0.25)) : 0
                   }}
                 >
+
                   <Card className="bg-gradient-to-br from-[#ae722b]/10 to-[#a03c26]/20">
                     <CardHeader>
                       <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
