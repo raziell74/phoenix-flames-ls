@@ -1,29 +1,100 @@
-# Create T3 App
+# Phoenix Flames Linkshell - Site
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+A comprehensive website for managing the Phoenix Flames Linkshell guild, built with the [T3 Stack](https://create.t3.gg/).
 
-## What's next? How do I make an app with this?
+## Project Overview
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+This platform streamlines guild management and enhances member engagement by providing:
+- Administrative tools for content and event management
+- Interactive features for member participation
+- Performance and contribution tracking
+- Guild activity analytics
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Tech Stack
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- **Framework:** [Next.js](https://nextjs.org) (App Router)
+- **Language:** TypeScript
+- **Authentication:** [Clerk](https://clerk.com)
+- **Database:** PostgreSQL with [Drizzle ORM](https://orm.drizzle.team)
+- **API Layer:** [tRPC](https://trpc.io)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com) with [ShadCN UI](https://ui.shadcn.com/)
+- **Data Visualization:** [Recharts](https://recharts.org/)
+
+## Local Development Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone [your-repo-url]
+   cd phoenix-flames-site
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Environment Setup**
+   - Copy the `.env.example` file to `.env`
+   ```bash
+   cp .env.example .env
+   ```
+   - Update the environment variables in `.env` with your values
+   - Sign up for a [Clerk account](https://clerk.com) and add your Clerk environment variables:
+     - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+     - `CLERK_SECRET_KEY`
+
+4. **Database Setup**
+   - Ensure Docker is installed and running on your system
+   - Start the PostgreSQL database using the provided script:
+   ```bash
+   pnpm db:start
+   # or directly run the script
+   ./start-database.sh
+   ```
+   - The script will create a Docker container with PostgreSQL and set up the required database
+   - The database will be accessible at `postgresql://postgres:postgres@localhost:5432/phoenix-flames`
+   - Run migrations to set up the database schema:
+   ```bash
+   pnpm db:push
+   ```
+
+5. **Start the development server**
+   ```bash
+   pnpm dev
+   ```
+   The site will be available at `http://localhost:3000`
+
+## Contributing
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting any changes.
+
+## Deployment
+
+This project is automatically deployed using Vercel's CI/CD pipeline:
+
+- **Staging Environment:** 
+  - URL: https://preview.phoenixflames.com
+  - Automatically deploys when changes are merged to the `staging` branch
+  - Use this environment for testing new features
+
+- **Production Environment:**
+  - URL: https://phoenixflames.com
+  - Automatically deploys when changes are merged to the `master` branch
+  - Only well-tested, approved changes should reach this environment
+
+### Deployment Process
+1. Create feature branches from `staging`
+2. Submit Pull Requests to the `staging` branch
+3. Once approved and merged, changes will deploy to the preview environment
+4. After testing in preview, create a PR from `staging` to `master`
+5. Merging to `master` will trigger production deployment
 
 ## Learn More
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+To understand the foundation of this project:
+- [T3 Stack Documentation](https://create.t3.gg/)
+- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available)
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Support
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+If you need help or have questions, please reach out to the guild administrators or create an issue in the repository.
