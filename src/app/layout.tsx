@@ -7,7 +7,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata: Metadata = {
   title: "Phoenix Flames Linkshell",
-  description: "Linkshell for the Phoenix Flames",
+  description: "Linkshell website for the Phoenix Flames",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
