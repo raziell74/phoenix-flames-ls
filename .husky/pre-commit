@@ -1,5 +1,5 @@
 # Run lint-staged first
-npx lint-staged
+pnpm lint-staged
 
 # Run tests
-pnpm test
+pnpm test -- --findRelatedTests $(git diff --cached --name-only) --passWithNoTests
