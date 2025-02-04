@@ -147,11 +147,12 @@ export default function Home() {
       {/* Features Section */}
       <div className="overflow-hidden">
         <div
-          ref={section2Ref}
+          
           className="py-24"
         >
           <div className="container mx-auto px-4">
             <motion.div
+              ref={section2Ref}
               initial={{ opacity: 0, y: -40 }}
               animate={{ 
                 opacity: section2InView ? 1 : 0,
