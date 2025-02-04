@@ -7,7 +7,6 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 import { Button } from "~/components/ui/button";
-import { cn } from "~/lib/utils";
 
 export default function Home() {
   const section1Ref = useRef<HTMLDivElement>(null);
