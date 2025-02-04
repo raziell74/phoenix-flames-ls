@@ -13,6 +13,7 @@ globs: *.*
   - **Styling & UI:** Tailwind CSS, ShadCN UI
   - **Data Visualization:** Recharts
   - **Authentication:** Clerk for user authentication and session management
+  - **Unit & Functional Testing** Jest is used in conjunction with Next.js to handle automated testing
 
 ### **Project Objective**
 

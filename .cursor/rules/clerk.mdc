@@ -1,35 +1,27 @@
 ---
-description: 
+description: Sets code quality rules for Clerk
 globs: src/app/layout.{ts,tsx},src/app/api/**/*.{ts,tsx},middleware.{ts,js}, src/middleware.{ts,js},src/components/auth/**/*.{ts,tsx}
 ---
 #### **User Authentication with Clerk**
 
-- **Integration with Next.js:**
-  - Follow Clerk’s official Next.js integration guide to set up authentication correctly.
-  - Wrap your application with the `ClerkProvider` (or the appropriate Clerk context provider) in your root layout or `_app` file as recommended by Clerk.
-  - Utilize Clerk’s Next.js middleware (e.g., `withClerkMiddleware`) on server-side routes and API endpoints to enforce authentication and protect sensitive data.
+- **Next.js Integration:**
+  - Use Clerk’s recommended patterns to embed authentication into the App Router.
+  - Ensure the app leverages Clerk’s providers and middleware to protect server routes and API endpoints.
 
-- **Protected Routes and Components:**
-  - Identify and mark protected routes using Clerk’s higher-order components (HOC) such as `withAuth` or hooks like `useAuth` to restrict access.
-  - Ensure that unauthenticated users are redirected to the Clerk sign-in page or a custom authentication flow.
-  - Use Clerk’s client-side hooks (e.g., `useUser`, `useSession`) to conditionally render components based on the user’s authentication status.
+- **Protected Routes & Components:**
+  - Mark routes and components that require authentication using Clerk’s HOC (e.g., `withAuth`) or client-side hooks (e.g., `useUser`, `useSession`).
+  - Redirect unauthenticated users to a sign‑in flow and conditionally render protected UI.
 
-- **User Session and Management:**
-  - Leverage Clerk’s built-in session management to handle sign-ins, sign-outs, and session persistence, following Clerk’s best practices.
-  - Securely manage user data and profile updates by adhering to Clerk’s guidelines, ensuring that sensitive operations are protected and validated.
-  - Implement Clerk’s recommended patterns for multi-factor authentication (MFA) and password resets if applicable to your project.
+- **Session Management:**
+  - Rely on Clerk’s session management for secure sign-ins, sign-outs, and profile updates.
+  - Follow best practices for multi‑factor authentication and token validation.
 
-- **Security Best Practices:**
-  - Enforce the use of HTTPS and secure cookies in production to protect user session data.
-  - Regularly update the Clerk SDK and monitor Clerk’s documentation for security advisories and new features.
-  - Validate and verify Clerk tokens on the server side where needed to ensure that only authorized users can access protected resources.
+- **Security & Error Handling:**
+  - Implement robust error handling to capture authentication failures and provide clear user feedback.
+  - Validate sensitive operations with Clerk token checks to ensure authorized access.
 
-- **Error Handling and Logging:**
-  - Implement robust error handling around authentication flows to capture and log issues related to sign-in, token validation, and user management.
-  - Provide clear, user-friendly error messages for authentication failures while logging detailed error information for debugging purposes.
-  - Use Clerk’s error reporting tools and integrate with your application’s logging strategy to monitor authentication events.
+- **Maintenance:**
+  - Document any customizations and adhere to Clerk’s evolving best practices to ease future updates.
 
-- **Documentation and Maintenance:**
-  - Document your authentication setup, including customizations and deviations from Clerk’s standard patterns, to ease future maintenance and developer onboarding.
-  - Stay current with Clerk.com’s documentation and Next.js updates to ensure that your authentication flows continue to align with best practices.
-  - Regularly review and refactor your authentication code to incorporate improvements, security enhancements, and new features provided by Clerk.
+- **Reference Documentation**
+  - When unclear about how to best utilize Clerk's various tools you can reference Clerk's documentation here: @https://clerk.com/docs

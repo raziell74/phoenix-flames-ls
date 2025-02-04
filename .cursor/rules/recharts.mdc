@@ -4,35 +4,32 @@ globs: src/components/charts/**/*.{ts,tsx,js,jsx}, src/ui/charts/**/*.{ts,tsx,js
 ---
 #### **Recharts**
 
-- **Data Visualization & Chart Components:**
-  - Utilize Recharts components (e.g., `LineChart`, `BarChart`, `PieChart`, `AreaChart`) to build interactive, data-driven visualizations.
-  - Ensure charts receive data through well-defined props to facilitate dynamic updates and customization.
-  - Leverage built-in components such as tooltips, legends, and axis components to provide clear and informative data representations.
-  - Encapsulate common visualization patterns in reusable components to promote consistency and adherence to DRY principles.
+- **Data Visualization:**
+  - Build interactive, data‑driven visualizations using Recharts components (e.g., `LineChart`, `BarChart`).
+  - Pass data through well‑defined props to support dynamic updates.
+  - Incorporate built‑in elements (tooltips, legends, axes) and apply Tailwind classes to align with ShadCN’s visual style.
 
-- **Responsive Design & Adaptability:**
-  - Always wrap charts within the `ResponsiveContainer` component to ensure they adapt fluidly to various screen sizes.
-  - Define minimum and maximum dimensions for charts to maintain readability on mobile, tablet, and desktop devices.
-  - Adjust chart elements (e.g., font sizes, margins, and label orientations) based on the viewport to optimize the user experience.
-  - Test charts across multiple screen sizes and orientations to verify that all elements render correctly and legibly.
+- **ShadCN Compatibility:**
+  - Follow ShadCN’s chart component guidelines to ensure visual consistency with the rest of the UI.
+  - Align typography, spacing, and color schemes with ShadCN’s design system.
+  - Leverage utility‑first styling to seamlessly integrate Recharts components within the ShadCN UI framework.
+
+- **Responsive Design:**
+  - Always wrap charts in `ResponsiveContainer` to guarantee fluid adaptation to different screen sizes.
+  - Set appropriate minimum and maximum dimensions to maintain legibility on mobile, tablet, and desktop devices.
+  - Adjust fonts, margins, and label orientations based on viewport size in line with ShadCN’s responsive design principles.
 
 - **Performance Optimization:**
-  - Optimize rendering by managing state updates and prop changes effectively; use memoization (e.g., `React.memo`) to prevent unnecessary re-renders.
-  - Limit the complexity of data passed to charts to avoid performance bottlenecks, especially with large datasets.
-  - Employ debouncing or throttling for interactions (like resizing or zooming) that trigger frequent updates.
-  - Leverage lazy loading and code-splitting techniques for pages featuring multiple or complex charts to reduce initial load times.
+  - Optimize rendering by managing state and prop updates effectively; use memoization (e.g., `useMemo`) when appropriate.
+  - Limit data complexity to avoid performance bottlenecks.
+  - Apply debouncing or throttling for interactive updates such as resizing or zooming.
 
 - **Interactivity & Accessibility:**
-  - Enhance user engagement with interactive features like hover effects, clickable elements, and dynamic tooltips.
-  - Ensure that all interactive elements are accessible by implementing appropriate ARIA attributes and supporting keyboard navigation.
-  - Provide alternative text or descriptions for charts, aiding users with visual impairments and improving overall accessibility.
+  - Enhance charts with interactive features (e.g., hover effects, clickable elements) to improve user engagement.
+  - Ensure accessibility by incorporating proper ARIA attributes and supporting keyboard navigation.
+  - Test charts across various devices and for accessibility compliance, adhering to both ShadCN and WCAG standards.
 
-- **Customization & Extensibility:**
-  - Expose configurable props for key visual aspects (such as color schemes, stroke widths, animation durations, and axis formats) to allow flexible customization.
-  - Create a consistent API for chart components that aligns with project naming conventions and coding standards.
-  - Document custom configurations and component behaviors thoroughly to ease future enhancements and maintenance.
-
-- **Testing & Documentation:**
-  - Write unit and integration tests for chart components to ensure they render correctly with diverse data sets and across different screen sizes.
-  - Regularly review and update chart configurations in response to evolving data models and user requirements.
-  - Maintain comprehensive documentation on chart behaviors, customizations, and any performance considerations to support ongoing development and debugging.
+- **Best Practices:**
+  - Develop reusable chart components that integrate seamlessly with the ShadCN UI design system.
+  - Write comprehensive tests to validate chart behavior with diverse data sets and across screen sizes.
+  - Document customization options, integration details, and performance considerations for ongoing maintenance.

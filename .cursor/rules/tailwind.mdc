@@ -5,29 +5,17 @@ globs: tailwind.config.js, postcss.config.js, src/**/*.{html,js,jsx,ts,tsx}, pub
 #### **TailwindCSS**
 
 - **Utility-First Styling:**
-  - Leverage Tailwind CSS utility classes to rapidly build interfaces by composing small, reusable style primitives.
-  - Avoid inline styles entirely; instead, rely on Tailwind's consistent, configuration-driven classes to ensure a unified design language.
-  - Embrace the utility-first paradigm to enable quick prototyping, reduce CSS bloat, and simplify style maintenance.
+  - Build interfaces using Tailwind CSS utility classes for a consistent, maintainable design.
+  - Avoid inline styles in favor of reusable Tailwind utilities.
 
 - **Responsive Design:**
-  - Utilize Tailwind's responsive modifiers (e.g., `sm:`, `md:`, `lg:`, `xl:`, `2xl:`) to create layouts that adapt seamlessly to a variety of screen sizes.
-  - Design mobile-first: start with base styles optimized for smaller screens, then progressively enhance layouts for larger devices.
-  - Use grid and flexbox utilities in tandem with responsive classes to adjust content flow, spacing, and alignment dynamically across devices.
-  - Test layouts on common breakpoints to ensure legibility, usability, and an optimal viewing experience on mobile phones, tablets, and desktops.
-  - Adjust typography, margins, padding, and interactive elements (such as buttons and navigation menus) based on viewport size to maintain a balanced, accessible design.
-
-- **Configuration and Customization:**
-  - Customize the `tailwind.config.js` file to define project-specific colors, fonts, spacing scales, and breakpoints that reflect the design system.
-  - Leverage Tailwind's theming capabilities to create custom variants and extend default utilities, ensuring a cohesive look and feel throughout the application.
-  - Use Tailwind plugins when necessary to introduce additional functionality or to integrate with other tools within your development workflow.
+  - Use responsive modifiers (e.g., `sm:`, `md:`, `lg:`) to adapt layouts for various screen sizes.
+  - Design mobile‑first, then enhance for larger viewports by adjusting typography, spacing, and element sizes.
 
 - **Performance Optimization:**
-  - Enable Tailwind's Just-in-Time (JIT) mode to generate only the CSS classes that are actually used in your project, significantly reducing build times and output file sizes.
-  - Configure PurgeCSS (or use Tailwind’s built-in purge options) to strip out unused CSS classes in production builds, ensuring that the final bundle is as lean as possible.
-  - Regularly audit and refactor your utility classes and configurations to eliminate redundancies and maintain optimal performance.
+  - Write clean, minimal Tailwind classes to reduce CSS bloat.
+  - Organize classes logically within markup to improve readability.
 
-- **Best Practices and Maintainability:**
-  - Organize Tailwind classes logically within your markup by grouping similar types (e.g., layout, spacing, typography, colors) to enhance readability.
-  - Document custom configurations, breakpoints, and design tokens within the `tailwind.config.js` file and maintain a living style guide for reference.
-  - Integrate TailwindCSS seamlessly with component libraries (e.g., ShadCN UI) and frameworks to enforce a consistent design language and promote reusability.
-  - Keep up with TailwindCSS updates and best practices by reviewing the official documentation and community examples to continuously refine your implementation.
+- **Best Practices:**
+  - Adhere to the project’s design system for consistency.
+  - Periodically review and remove unused classes to maintain optimal performance.

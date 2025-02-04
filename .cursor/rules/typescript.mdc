@@ -5,34 +5,34 @@ globs: src/**/*.{ts,tsx}, *.ts, *.tsx
 #### **Typescript**
 
 - **Strict Typing & Type Safety:**
-  - Write all code in TypeScript and enforce explicit types wherever possible.
-  - Enable strict mode in your `tsconfig.json` (e.g., `"strict": true`) to catch potential issues at compile time.
-  - Avoid the use of `any`; use `unknown` when the type is uncertain and perform proper type narrowing before usage.
-  - Leverage TypeScript’s type inference while ensuring that complex or critical structures have explicit type annotations.
+  - Write all code in TypeScript and enforce explicit types wherever possible
+  - Avoid the use of `any`; use `unknown` when the type is uncertain and perform proper type narrowing before usage
+  - Leverage TypeScript's type inference while ensuring that complex or critical structures have explicit type annotations
+
+- **Code Cleanliness:**
+  - Remove all unused variables and imports
+  - Use the `--noUnusedLocals` and `--noUnusedParameters` compiler options to catch unused code
+  - Delete commented-out code instead of leaving it in the codebase
+  - Remove any dead code paths or unreachable code
 
 - **Explicit Type Declarations:**
-  - Always annotate function parameters and return types to improve code readability and maintainability.
-  - Define data structures with interfaces or type aliases to clearly describe the expected shape of data, especially for API responses and component props.
-  - Use union and intersection types to accurately represent values that could have multiple shapes or behaviors.
+  - Always annotate function parameters and return types to improve code readability and maintainability
+  - Define data structures with interfaces or type aliases to clearly describe the expected shape of data
+  - Use union and intersection types to accurately represent values that could have multiple shapes or behaviors
 
 - **Advanced Types & Patterns:**
-  - Utilize generics to build flexible, reusable functions and components while preserving type safety.
-  - Employ enums to represent fixed sets of related constants, ensuring consistent values across the application.
-  - Implement discriminated unions for handling complex conditional types and enabling safe exhaustive checks.
-  - Take advantage of mapped types, conditional types, and utility types (such as `Partial`, `Pick`, and `Record`) for advanced type transformations and to reduce redundancy.
+  - Utilize generics to build flexible, reusable functions and components while preserving type safety
+  - Employ enums to represent fixed sets of related constants
+  - Implement discriminated unions for handling complex conditional types and enabling safe exhaustive checks
+  - Use mapped types, conditional types, and utility types (such as `Partial`, `Pick`, and `Record`) for advanced type transformations
 
 - **Code Consistency & Best Practices:**
-  - Adhere to consistent naming conventions for types, interfaces, and variables to improve code clarity.
-  - Refactor and break down complex types into smaller, composable types to simplify understanding and reduce cognitive load.
-  - Maintain a central repository or a well-organized folder structure for shared type definitions to promote reuse and avoid duplication.
-  - Regularly review type definitions during code reviews to ensure that they accurately represent the data and logic of the application.
-
-- **Tooling and Linting:**
-  - Integrate TypeScript with ESLint (and Prettier, if applicable) to enforce coding standards and catch potential type-related issues early.
-  - Utilize IDE integrations and type-checking tools to provide real-time feedback during development, ensuring adherence to type safety principles.
-  - Write tests that include type boundaries, ensuring that your type contracts remain robust and evolve correctly alongside your codebase.
+  - Adhere to consistent naming conventions for types, interfaces, and variables
+  - Refactor and break down complex types into smaller, composable types
+  - Maintain a central repository for shared type definitions to promote reuse and avoid duplication
+  - Regularly review type definitions during code reviews
 
 - **Documentation & Developer Experience:**
-  - Document complex types and interfaces using inline comments or JSDoc to provide context and guidance for future developers.
-  - Create comprehensive documentation for your type definitions, especially for shared libraries or modules, to aid in onboarding and maintenance.
-  - Encourage a culture of clear and precise type definitions during code reviews to improve overall code quality and developer collaboration.
+  - Document complex types and interfaces using inline comments or JSDoc
+  - Create comprehensive documentation for shared type definitions
+  - Encourage clear and precise type definitions during code reviews 

@@ -5,39 +5,30 @@ globs: src/server/db/**/*.{ts,js,sql}, migrations/**/*.{ts,js,sql}
 #### **Postgres**
 
 - **Database Design & Schema:**
-  - Ensure that the schema is designed following normalization standards to minimize redundancy and enhance data integrity.
-  - Define clear relationships between tables using well-structured primary and foreign keys.
-  - Adopt a consistent naming convention for tables, columns, and constraints to improve readability and maintainability.
-  - Implement a robust migration strategy to manage schema changes over time, ensuring smooth versioning and rollbacks.
+  - Design schemas following normalization standards to minimize redundancy.
+  - Define clear relationships with well‑structured primary and foreign keys.
+  - Use consistent naming conventions for tables, columns, and constraints.
 
 - **Indexes & Query Performance:**
-  - Create indexes on columns frequently used in WHERE, JOIN, and ORDER BY clauses to accelerate query performance.
-  - Analyze query execution plans (using tools like `EXPLAIN`) to identify bottlenecks and optimize query performance.
-  - Utilize composite indexes when multiple columns are often queried together, but balance against potential overhead on write operations.
-  - Regularly review and adjust indexing strategies as the dataset grows to maintain optimal performance.
+  - Create indexes on frequently queried columns to boost performance.
+  - Analyze and optimize queries to avoid bottlenecks while balancing write performance.
 
 - **Security & Data Protection:**
-  - Use parameterized queries or prepared statements to safeguard against SQL injection attacks.
-  - Implement role-based access controls (RBAC) to ensure that database users only have the minimum permissions required.
-  - Regularly audit access permissions and monitor for unusual activity to protect sensitive data.
-  - Where applicable, apply encryption for sensitive data at rest and in transit.
+  - Use parameterized queries to prevent SQL injection.
+  - Enforce role‑based access and secure handling of sensitive data.
+  - Apply encryption where needed to protect data at rest and in transit.
 
 - **Transaction Management & Concurrency:**
-  - Use transactions to ensure atomicity in multi-step operations, guaranteeing that either all operations succeed or none do.
-  - Keep transactions as brief as possible to reduce lock contention and improve concurrency.
-  - Select appropriate isolation levels based on the application's consistency requirements and performance considerations.
+  - Use transactions for multi‑step operations to ensure atomicity.
+  - Keep transactions brief to minimize lock contention and improve concurrency.
 
 - **Data Integrity & Constraints:**
-  - Enforce data integrity using constraints such as NOT NULL, UNIQUE, CHECK, and FOREIGN KEY constraints.
-  - Leverage triggers and stored procedures judiciously for encapsulating complex business logic, ensuring these implementations are well-documented.
-  - Validate data at both the application and database levels to ensure consistency and correctness.
+  - Enforce data integrity with constraints such as NOT NULL, UNIQUE, CHECK, and FOREIGN KEY.
+  - Use triggers or stored procedures judiciously for complex business logic.
 
-- **Backup, Recovery & Monitoring:**
-  - Establish regular backup procedures and verify that restoration processes work as expected.
-  - Monitor database performance and health using tools like `pg_stat_statements`, log analyzers, and other monitoring solutions.
-  - Maintain clear documentation of backup strategies, recovery processes, and any performance tuning measures.
+- **Backup & Monitoring:**
+  - Regularly back up data and monitor performance to adjust strategies as the dataset evolves.
 
-- **Documentation & Best Practices:**
-  - Document the schema design, indexing strategies, and any complex query logic for future reference and maintenance.
-  - Keep a version-controlled record of schema migrations and database changes.
-  - Follow industry-standard practices and periodically review and refine strategies as the database and application requirements evolve.
+- **Best Practices:**
+  - Document schema designs and query logic to facilitate maintenance.
+  - Periodically review and refine database strategies to align with evolving requirements.

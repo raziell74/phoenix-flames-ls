@@ -1,0 +1,39 @@
+---
+description: Sets code quality rules for writing tests using Jest
+globs: src/__tests__/**/*.{js,jsx,ts,tsx},jest.config.{js,ts},jest.setup.{js,ts}
+---
+#### **Jest for Automated Testing**
+
+- **Test Organization & Structure:**
+  - All test files must reside exclusively in the `src/__tests__/` directory.
+  - Mirror the folder structure of the corresponding source files. For example, a component at `src/components/ui/button.tsx` should have its test file at `src/__tests__/components/ui/button.test.tsx`.
+  - Clearly separate unit tests from functional/integration tests through file naming and folder organization within `src/__tests__/`.
+
+- **Integration with Next.js:**
+  - Utilize libraries such as `@testing-library/react` and `@testing-library/jest-dom` to render components and simulate user interactions, ensuring tests closely mimic real user behavior.
+  - Mock Next.js-specific functionalities (e.g., routing or data fetching) where necessary to isolate the component under test.
+
+- **Test Coverage & Quality:**
+  - Aim for comprehensive test coverage by writing detailed unit tests for critical functions and components, and functional tests that validate key user flows.
+  - Use Jest's built-in coverage reporting to monitor and ensure adequate test coverage.
+  - Ensure tests are deterministic, isolated, and focused on a single piece of functionality to facilitate maintenance and reliability.
+
+- **Testing Patterns & Best Practices:**
+  - **Unit Testing:**  
+    - Focus on testing individual functions, components, or hooks in isolation.
+    - Use Jest’s mocking features to simulate external dependencies and isolate functionality.
+  - **Functional & Integration Testing:**  
+    - Simulate end-to-end user interactions by testing component trees and API interactions.
+    - Employ `@testing-library/react` utilities such as `render`, `fireEvent`, and `waitFor` to replicate real user behaviors and handle asynchronous operations.
+  - **Asynchronous Testing:**  
+    - Manage asynchronous operations using async/await patterns and helper functions like `waitFor` to ensure that state updates are fully applied before assertions.
+
+- **Documentation & Continuous Integration:**
+  - Document your testing strategy—including guidelines on writing and organizing tests—in the project’s documentation to assist future developers.
+  - Integrate Jest into the CI/CD pipeline to run tests automatically on commits and pull requests, ensuring continuous code quality.
+  - Regularly review and refactor tests alongside the main codebase to eliminate redundancies and maintain alignment with current functionality.
+
+- **Best Practices:**
+  - Keep tests DRY by abstracting common testing logic into reusable helper functions or custom test utilities.
+  - Write clear and descriptive test cases that succinctly communicate each test’s purpose and expected outcome.
+  - Maintain a balance between thoroughness and maintainability, ensuring tests are comprehensive yet not overly complex.

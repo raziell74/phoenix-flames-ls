@@ -1,40 +1,41 @@
 ---
 description: Sets code quality rules for Tailwind
-globs: src/server/trpc/**/*.{ts,js}, src/server/api/**/*.{ts,js}
+globs: src/server/trpc/**/*.{ts,js}, src/server/api/**/*.{ts,js},src/app/*.{ts,tsx,js,jsx}
 ---
 #### **tRPC**
 
 - **Type-Safe API Endpoints:**
-  - Define all procedures (queries and mutations) using tRPC to ensure end-to-end type safety across client and server.
-  - Leverage TypeScript’s type inference to automatically propagate types from your API definitions to the consuming components.
-  - Use schema validation libraries like Zod to validate both input and output data, ensuring robust data contracts.
+  - Define queries and mutations using tRPC to enforce end-to-end type safety.
+  - Leverage TypeScript’s inference and use Zod (or similar) for input/output validation.
 
 - **Modular Router Organization:**
-  - Organize API logic into modular routers, grouping related queries and mutations together to promote scalability and maintainability.
-  - Separate feature-specific procedures into individual routers, then compose them into a unified API structure.
-  - Document each router and its procedures clearly to assist in onboarding and maintenance.
+  - Organize related procedures into feature-specific routers.
+  - Merge individual routers into a unified API router.
+  - Use descriptive names and document each router and procedure with inline comments.
 
 - **Integration with Next.js:**
-  - Seamlessly integrate tRPC with Next.js by leveraging API routes or the App Router, ensuring that data fetching is streamlined for both SSR and client-side rendering.
-  - Ensure that tRPC procedures are consumed in a way that respects Next.js conventions, maintaining a clear separation between API logic and UI components.
-  - Utilize Next.js middleware and server components where applicable to further optimize the integration.
+  - Integrate tRPC within Next.js using API routes or the App Router to support SSR, SSG, and client-side rendering.
+  - Maintain a clear separation between API logic and UI components.
+
+- **Creating New tRPC Routes:**
+  - Define new procedures in the appropriate feature router.
+  - Validate inputs with Zod schemas and handle errors gracefully.
+  - Follow the T3 documentation for structuring and naming new routes consistently.
+
+- **Consuming tRPC Routes in Components:**
+  - Use tRPC hooks (e.g., `api.<router>.<procedure>.useQuery()` and `useMutation()`) in components or pages.
+  - Handle loading, error, and success states following patterns from the T3 documentation.
+  - Ensure data fetching is managed appropriately within React’s lifecycle (e.g., using hooks like `useEffect` when needed).
 
 - **Error Handling & Middleware:**
-  - Implement centralized error handling within your tRPC procedures to capture and manage errors uniformly.
-  - Utilize tRPC’s middleware capabilities to enforce authentication, logging, and additional validations across your API endpoints.
-  - Clearly define error responses and ensure that clients can gracefully handle API failures.
+  - Implement centralized error handling through tRPC middleware.
+  - Use middleware to enforce authentication, logging, and additional validations across API endpoints.
 
 - **Performance & Optimization:**
-  - Optimize data fetching by designing lean procedures that return only the necessary data, reducing over-fetching.
-  - Consider caching strategies at the API level to minimize redundant requests and improve response times.
-  - Monitor performance and refactor procedures as needed to ensure responsiveness and scalability.
+  - Design procedures to return only the necessary data to avoid over-fetching.
+  - Consider caching strategies where applicable.
+  - Periodically review and refactor API endpoints for optimal performance.
 
-- **Separation of Concerns:**
-  - Keep API logic strictly focused on data operations and business rules, separating it from UI-specific concerns.
-  - Structure your project so that the tRPC API layer is isolated and testable independently of the client-side code.
-  - Maintain clear boundaries between API routes and UI logic to simplify both development and debugging.
-
-- **Documentation & Best Practices:**
-  - Document each procedure with clear comments, specifying expected inputs, outputs, and potential error cases.
-  - Follow consistent naming conventions and coding standards to ensure the API remains understandable and maintainable.
-  - Regularly review and update the tRPC configuration and routers as the application evolves, ensuring adherence to best practices.
+- **Documentation & Consistency:**
+  - Document each procedure with clear comments on expected inputs, outputs, and error cases.
+  - Follow consistent naming conventions and coding standards across all tRPC routers and procedures.

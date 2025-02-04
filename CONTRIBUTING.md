@@ -30,7 +30,6 @@ Thank you for your interest in contributing to our project! This document outlin
    git pull origin staging
    git checkout -b feature/your-feature-name
    ```
-   
 2. Name your branch following our conventions:
    - `feature/` - for new features
    - `fix/` - for bug fixes
@@ -47,15 +46,37 @@ Thank you for your interest in contributing to our project! This document outlin
 - Use ShadcnUI components when possible
 - Follow TypeScript best practices
 
+#### Git Hooks
+
+This project uses Husky to enforce code quality through pre-commit hooks. When you attempt to commit changes:
+
+1. ESLint will run on staged JS/TS files
+2. Prettier will format all staged files
+3. TypeScript type checking will run
+
+If any of these checks fail, your commit will be blocked. You can fix issues by:
+
+- Running `pnpm lint:fix` for linting issues
+- Running `pnpm format` for formatting issues
+- Running `pnpm typecheck` to identify type errors
+
+To bypass hooks in exceptional cases (not recommended), use:
+
+```bash
+git commit -m "message" --no-verify
+```
+
 ### 4. Before Submitting a PR
 
 1. Run all checks locally:
+
    ```bash
    pnpm check          # Type checking and linting
    pnpm format:check   # Code formatting
    ```
 
 2. Fix any issues:
+
    ```bash
    pnpm lint:fix       # Fix linting issues
    pnpm format:write   # Fix formatting
@@ -127,4 +148,4 @@ Thank you for your interest in contributing to our project! This document outlin
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the project's license. 
+By contributing, you agree that your contributions will be licensed under the project's license.

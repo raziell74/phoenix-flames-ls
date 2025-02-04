@@ -5,42 +5,33 @@ globs: src/app/**/*.{ts,tsx,js,jsx}, src/components/**/*.{ts,tsx,js,jsx}
 #### **Next.js (App Router)**
 
 - **File Structure & Routing:**
-  - Organize all pages and components within the `app/` directory, following the nested routing conventions.
-  - Structure your folders so that each route has its own directory containing its associated `page.tsx`, `layout.tsx`, and optional `error.tsx` or `loading.tsx` files.
-  - Keep route-specific components and layouts close to each other to promote clarity and ease of navigation in the codebase.
-  - Separate shared components (e.g., headers, footers, modals) into a dedicated components folder outside the `app/` directory if they are used across multiple routes.
+  - Organize pages and components within the `app/` directory using nested routing.
+  - Structure each route with dedicated files (e.g., `page.tsx`, `layout.tsx`, `error.tsx`, `loading.tsx`) and keep route-specific components together.
+  - Separate shared components into a common folder to promote reuse.
 
 - **Server vs. Client Components:**
-  - Clearly delineate Server Components from Client Components:
-    - Default to Server Components for rendering static content and performing data fetching, which allows for faster load times and better SEO.
-    - Mark components that require interactivity or state management with `"use client"` at the top of the file.
-  - Leverage the benefits of Server Components to reduce bundle sizes and improve performance while using Client Components only where necessary.
+  - Default to Server Components for static content and data fetching to improve performance and SEO.
+  - Mark interactive or stateful components with `"use client"` to enable client-side behavior.
+  - Use Server Components to reduce bundle sizes and enhance performance.
 
 - **Data Fetching & Performance:**
-  - Use Next.js’s built-in data fetching methods:
-    - Implement Server-Side Rendering (SSR) for dynamic data that needs to be fresh on each request.
-    - Use Static Site Generation (SSG) for pages where content does not change frequently to maximize performance.
-    - Consider Incremental Static Regeneration (ISR) to update static content in the background without a full rebuild.
-  - Utilize Next.js caching strategies and revalidation mechanisms to optimize data freshness and reduce unnecessary network requests.
-  - Ensure that data fetching logic is colocated with the component that uses it for better maintainability and clearer data flow.
+  - Use SSR, SSG, and ISR patterns to optimize data freshness and load times.
+  - Co-locate data fetching logic with consuming components for clarity.
+  - Apply caching and revalidation techniques to reduce unnecessary requests.
 
 - **SEO & Metadata:**
-  - Leverage Next.js’s built-in metadata handling by exporting a `metadata` object in your page or layout files.
-  - Include essential SEO elements such as `title`, `description`, and Open Graph tags to improve search engine ranking and social media sharing.
-  - Use structured data where applicable to provide search engines with detailed information about your content.
+  - Export a `metadata` object from pages/layouts to provide SEO details (e.g., title, description, Open Graph).
+  - Include structured data where applicable to improve search engine understanding.
 
 - **Static Assets & Optimizations:**
-  - Utilize Next.js’s Image component for automatic image optimization, lazy loading, and responsive image support.
-  - Take advantage of automatic code splitting and prefetching to ensure that only the necessary JavaScript is loaded, reducing initial load times.
-  - Organize static assets (e.g., images, fonts, icons) in a public directory, ensuring they are served efficiently with caching strategies in place.
+  - Use Next.js’s Image component for responsive, optimized images.
+  - Benefit from automatic code splitting and prefetching to load only necessary JavaScript.
 
 - **Error Handling & Edge Cases:**
-  - Implement error boundaries using Next.js error components (`error.tsx`) to gracefully handle runtime errors on a per-route basis.
-  - Create custom `not-found.tsx` pages for handling 404 scenarios, ensuring a consistent user experience.
-  - Provide fallback UI components (e.g., loading spinners) in `loading.tsx` files to enhance perceived performance during data fetching.
+  - Implement error boundaries with Next.js error components to gracefully handle runtime errors.
+  - Provide custom 404 (`not-found.tsx`) and loading states to enhance user experience.
 
 - **Best Practices:**
-  - Follow established naming conventions and folder structures to maintain a consistent and understandable codebase.
-  - Keep components focused and minimal; break down large components into smaller, reusable pieces where possible.
-  - Regularly review and refactor your code to take advantage of the latest Next.js features and improvements.
-  - Maintain up-to-date documentation within the code to aid future developers in understanding the project’s structure and data flow.
+  - Follow consistent naming conventions and modular folder structures.
+  - Keep components small, focused, and reusable.
+  - Regularly refactor and document code to leverage new Next.js features.
