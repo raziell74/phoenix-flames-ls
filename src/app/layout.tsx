@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={`${GeistSans.variable}`}>
-        <body className="overflow-x-hidden">
+        <body>
           <TRPCReactProvider>
             <MainNav />
             {children}

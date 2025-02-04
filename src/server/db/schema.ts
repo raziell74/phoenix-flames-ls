@@ -3,11 +3,10 @@
 
 import { sql } from "drizzle-orm";
 import {
-  index,
-  integer,
   pgTableCreator,
   timestamp,
   varchar,
+  pgEnum,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -18,19 +17,17 @@ import {
  */
 export const createTable = pgTableCreator((name) => `phoenix-flames-ls_${name}`);
 
-export const posts = createTable(
-  "post",
-  {
-    id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
-    name: varchar("name", { length: 256 }),
-    createdAt: timestamp("created_at", { withTimezone: true })
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
-      () => new Date()
-    ),
-  },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  })
-);
+// Create an enum for user roles
+export const userRoleEnum = pgEnum("user_role", ["admin", "member"]);
+export type UserRole = typeof userRoleEnum.enumValues[number];
+
+export const users = createTable("user", {
+  id: varchar("id", { length: 256 }).primaryKey(), // Clerk user ID
+  role: userRoleEnum("role").default("member").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
+    () => new Date()
+  ),
+});
