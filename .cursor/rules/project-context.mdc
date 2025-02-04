@@ -1,0 +1,19 @@
+---
+description: Context for what this project is and its objective
+globs: *.*
+---
+### **Project Context**
+
+- **Project Setup:**  
+  Built using the `Create T3 App` command with ShadCN UI as the base component library.
+
+- **Technologies in Use:**  
+  - **Languages & Frameworks:** TypeScript, Next.js (using the App Router)
+  - **APIs & ORM:** tRPC, Drizzle, Postgres
+  - **Styling & UI:** Tailwind CSS, ShadCN UI
+  - **Data Visualization:** Recharts
+  - **Authentication:** Clerk for user authentication and session management
+
+### **Project Objective**
+
+Create a comprehensive website for an MMO Guild to streamline guild management and enhance member engagement. This platform will empower administrators to manage content and events while providing guild members with interactive tools for participation and tracking.

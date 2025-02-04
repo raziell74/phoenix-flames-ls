@@ -1,0 +1,40 @@
+---
+description: Sets code quality rules for Tailwind
+globs: src/server/trpc/**/*.{ts,js}, src/server/api/**/*.{ts,js}
+---
+#### **tRPC**
+
+- **Type-Safe API Endpoints:**
+  - Define all procedures (queries and mutations) using tRPC to ensure end-to-end type safety across client and server.
+  - Leverage TypeScript’s type inference to automatically propagate types from your API definitions to the consuming components.
+  - Use schema validation libraries like Zod to validate both input and output data, ensuring robust data contracts.
+
+- **Modular Router Organization:**
+  - Organize API logic into modular routers, grouping related queries and mutations together to promote scalability and maintainability.
+  - Separate feature-specific procedures into individual routers, then compose them into a unified API structure.
+  - Document each router and its procedures clearly to assist in onboarding and maintenance.
+
+- **Integration with Next.js:**
+  - Seamlessly integrate tRPC with Next.js by leveraging API routes or the App Router, ensuring that data fetching is streamlined for both SSR and client-side rendering.
+  - Ensure that tRPC procedures are consumed in a way that respects Next.js conventions, maintaining a clear separation between API logic and UI components.
+  - Utilize Next.js middleware and server components where applicable to further optimize the integration.
+
+- **Error Handling & Middleware:**
+  - Implement centralized error handling within your tRPC procedures to capture and manage errors uniformly.
+  - Utilize tRPC’s middleware capabilities to enforce authentication, logging, and additional validations across your API endpoints.
+  - Clearly define error responses and ensure that clients can gracefully handle API failures.
+
+- **Performance & Optimization:**
+  - Optimize data fetching by designing lean procedures that return only the necessary data, reducing over-fetching.
+  - Consider caching strategies at the API level to minimize redundant requests and improve response times.
+  - Monitor performance and refactor procedures as needed to ensure responsiveness and scalability.
+
+- **Separation of Concerns:**
+  - Keep API logic strictly focused on data operations and business rules, separating it from UI-specific concerns.
+  - Structure your project so that the tRPC API layer is isolated and testable independently of the client-side code.
+  - Maintain clear boundaries between API routes and UI logic to simplify both development and debugging.
+
+- **Documentation & Best Practices:**
+  - Document each procedure with clear comments, specifying expected inputs, outputs, and potential error cases.
+  - Follow consistent naming conventions and coding standards to ensure the API remains understandable and maintainable.
+  - Regularly review and update the tRPC configuration and routers as the application evolves, ensuring adherence to best practices.

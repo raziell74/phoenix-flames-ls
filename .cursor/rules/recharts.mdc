@@ -1,0 +1,38 @@
+---
+description: Sets code quality rules for Recharts
+globs: src/components/charts/**/*.{ts,tsx,js,jsx}, src/ui/charts/**/*.{ts,tsx,js,jsx}
+---
+#### **Recharts**
+
+- **Data Visualization & Chart Components:**
+  - Utilize Recharts components (e.g., `LineChart`, `BarChart`, `PieChart`, `AreaChart`) to build interactive, data-driven visualizations.
+  - Ensure charts receive data through well-defined props to facilitate dynamic updates and customization.
+  - Leverage built-in components such as tooltips, legends, and axis components to provide clear and informative data representations.
+  - Encapsulate common visualization patterns in reusable components to promote consistency and adherence to DRY principles.
+
+- **Responsive Design & Adaptability:**
+  - Always wrap charts within the `ResponsiveContainer` component to ensure they adapt fluidly to various screen sizes.
+  - Define minimum and maximum dimensions for charts to maintain readability on mobile, tablet, and desktop devices.
+  - Adjust chart elements (e.g., font sizes, margins, and label orientations) based on the viewport to optimize the user experience.
+  - Test charts across multiple screen sizes and orientations to verify that all elements render correctly and legibly.
+
+- **Performance Optimization:**
+  - Optimize rendering by managing state updates and prop changes effectively; use memoization (e.g., `React.memo`) to prevent unnecessary re-renders.
+  - Limit the complexity of data passed to charts to avoid performance bottlenecks, especially with large datasets.
+  - Employ debouncing or throttling for interactions (like resizing or zooming) that trigger frequent updates.
+  - Leverage lazy loading and code-splitting techniques for pages featuring multiple or complex charts to reduce initial load times.
+
+- **Interactivity & Accessibility:**
+  - Enhance user engagement with interactive features like hover effects, clickable elements, and dynamic tooltips.
+  - Ensure that all interactive elements are accessible by implementing appropriate ARIA attributes and supporting keyboard navigation.
+  - Provide alternative text or descriptions for charts, aiding users with visual impairments and improving overall accessibility.
+
+- **Customization & Extensibility:**
+  - Expose configurable props for key visual aspects (such as color schemes, stroke widths, animation durations, and axis formats) to allow flexible customization.
+  - Create a consistent API for chart components that aligns with project naming conventions and coding standards.
+  - Document custom configurations and component behaviors thoroughly to ease future enhancements and maintenance.
+
+- **Testing & Documentation:**
+  - Write unit and integration tests for chart components to ensure they render correctly with diverse data sets and across different screen sizes.
+  - Regularly review and update chart configurations in response to evolving data models and user requirements.
+  - Maintain comprehensive documentation on chart behaviors, customizations, and any performance considerations to support ongoing development and debugging.

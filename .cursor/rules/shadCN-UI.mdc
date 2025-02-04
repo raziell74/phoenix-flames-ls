@@ -1,0 +1,39 @@
+---
+description: Sets code quality rules for ShadCN
+globs: *.tsx,*.ts,*.json,*.css,*.js,*.jsx
+---
+#### **ShadCN UI**
+
+- **Component Usage and Composition:**
+  - Utilize ShadCN UI components as the foundational building blocks for constructing the user interface.
+  - Follow the recommended component composition patterns provided by ShadCN UI, favoring the use of smaller, modular components that can be combined to form complex UI structures.
+  - Emphasize reusability by creating custom, higher-order components when common patterns or behaviors emerge.
+  - Ensure that component boundaries are clear, with each component responsible for a single piece of functionality or UI, which aids in maintainability and testing.
+
+- **Customization and Theming:**
+  - Override or extend the default styles of ShadCN UI components using Tailwind CSS classes to adhere to your project’s design system.
+  - Configure and leverage Tailwind’s theming capabilities (via the Tailwind configuration file) to maintain a consistent color palette, typography, spacing, and overall visual language across all components.
+  - Create custom variants of components when necessary, ensuring that any visual or functional adjustments are implemented consistently across the application.
+  - Use utility-first CSS principles to fine-tune component styles without resorting to complex overrides, keeping the codebase clean and maintainable.
+
+- **Accessibility and Best Practices:**
+  - Ensure that all ShadCN UI components meet or exceed WCAG guidelines to provide an inclusive user experience.
+  - Implement proper ARIA attributes, semantic HTML, and keyboard navigability in interactive components (such as dropdowns, modals, and menus).
+  - Test components using accessibility tools and manual keyboard navigation to verify that focus management and interactive elements behave as expected.
+  - Document any accessibility considerations or customizations applied to components to assist future developers in maintaining compliance.
+
+- **Performance and Responsiveness:**
+  - Optimize the usage of ShadCN UI components to ensure that the UI remains responsive across various devices and screen sizes.
+  - Utilize responsive design principles and Tailwind’s responsive utilities to adjust layouts, font sizes, and spacing dynamically based on viewport dimensions.
+  - Test UI components on multiple devices (mobile, tablet, desktop) to ensure consistent behavior and legibility.
+  - Avoid excessive re-renders or complex component hierarchies that could degrade performance; consider React memoization techniques where appropriate.
+
+- **Documentation and Maintenance:**
+  - Maintain comprehensive documentation for any customizations, component extensions, or design decisions involving ShadCN UI components.
+  - Keep a living style guide or component library documentation that illustrates usage patterns, code examples, and customization guidelines.
+  - Regularly review and refactor components to align with evolving best practices and project requirements, ensuring long-term maintainability.
+
+- **Integration with Other Tools and Frameworks:**
+  - Ensure that ShadCN UI components integrate seamlessly with other libraries and frameworks used in the project, such as state management (e.g., Zustand), routing (Next.js), and data fetching (tRPC).
+  - Validate that the customizations and theming applied to ShadCN UI components do not conflict with global styles or other third-party components.
+  - Leverage ShadCN UI alongside Tailwind CSS to create a cohesive and modern user interface that adheres to the project’s overall design principles.

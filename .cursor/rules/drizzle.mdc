@@ -1,0 +1,36 @@
+---
+description: Sets code quality rules for Drizzle
+globs: src/server/**/*.{ts,js,tsx,jsx}, drizzle/**/*.{ts,js}
+---
+#### **Drizzle**
+
+- **Database Abstraction and ORM Integration:**
+  - Use Drizzle as the ORM/DSL to interface with the Postgres database.
+  - Clearly define and maintain database schemas using Drizzle’s schema definitions, ensuring they align with the project's data models.
+  - Establish a robust migration strategy to manage schema evolution over time.
+  - Configure database connections and pooling appropriately for both development and production environments.
+
+- **Type-Safe Query Writing:**
+  - Leverage Drizzle’s type-safe DSL to construct all queries, ensuring compile-time verification and reducing runtime errors.
+  - Prioritize clarity and maintainability by writing queries that are explicit, well-structured, and documented with inline comments where necessary.
+  - Use parameterized queries and proper abstractions to minimize risk of SQL injection and ensure data integrity.
+
+- **Query Performance and Optimization:**
+  - Optimize queries by using proper indexing, query hints, and analyzing query execution plans.
+  - Design queries to avoid common pitfalls such as N+1 query issues; plan data fetching to minimize redundant calls.
+  - Regularly review and refactor query logic as the database grows and evolves.
+
+- **Modularization and Reusability:**
+  - Organize query logic into modular functions or services, allowing for reuse across various parts of the application.
+  - Follow DRY principles when implementing common query patterns, such as filtering, sorting, and pagination.
+  - Separate business logic from data retrieval logic, ensuring that the data access layer remains isolated for easier testing and maintenance.
+
+- **Integration with Other Layers:**
+  - Ensure seamless integration between Drizzle and other technologies in the stack, such as tRPC for API endpoints and Next.js for server-side rendering.
+  - Maintain consistency between the database models defined in Drizzle and the corresponding TypeScript types or interfaces used throughout the application.
+  - Integrate data validation (e.g., using Zod) to ensure that data entering or leaving the database is correctly formatted and adheres to the schema.
+
+- **Documentation and Best Practices:**
+  - Document the schema definitions, migration strategies, and any complex query logic to facilitate future maintenance and onboarding.
+  - Keep the documentation up-to-date with schema changes and query refactoring.
+  - Follow industry best practices for secure database access, including input sanitization and proper handling of sensitive data.

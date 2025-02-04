@@ -1,0 +1,47 @@
+---
+description: Rules for utilizing Zustand
+globs: src/store/**/*.{ts,tsx,js,jsx}, src/zustand/**/*.{ts,tsx,js,jsx}
+---
+#### **Zustand for State Management**
+
+- **Store Setup & Modularization:**
+  - **Domain-Specific Stores:**
+    - Create separate Zustand stores for distinct domains (e.g., user state, event management, UI state) to maintain clear boundaries and simplify debugging.
+    - Ensure each store has a focused responsibility to reduce coupling and enhance maintainability.
+  - **State Slices and Modularization:**
+    - When using a single store for related state, structure it into logical slices to isolate concerns and minimize unnecessary re-renders.
+    - Organize state update logic in a modular fashion so that related functionalities are encapsulated within dedicated sections or helper functions.
+
+- **Component Integration & Selective Subscriptions:**
+  - **Selective State Subscriptions:**
+    - Use Zustand’s `useStore` hook with selectors to subscribe only to the specific slices of state needed by a component, thereby limiting re-renders to relevant changes.
+    - Apply shallow equality checks or custom comparator functions with selectors to optimize performance, especially for large or complex state objects.
+  - **Encapsulated State Access:**
+    - Abstract intricate state access and update logic into custom hooks or helper functions, ensuring that UI components remain focused solely on rendering.
+  
+- **State Updates & Immutability:**
+  - **Immutable Updates:**
+    - Always perform state updates immutably using Zustand’s setter functions. This guarantees that changes are tracked correctly and prevents unintended side effects.
+    - Favor Zustand's built-in mechanisms for state updates to maintain clarity and consistency.
+  - **Action Handlers:**
+    - Define clear, well-documented action handlers within your store to encapsulate state changes. This centralizes state logic, making it easier to test and debug.
+    - Group related state update functions together logically, so that the state management remains predictable and cohesive.
+
+- **Middleware, Debugging, & Dev Tools:**
+  - **Middleware Integration:**
+    - Integrate middleware for logging, state persistence, or error handling to monitor and manage state transitions effectively.
+    - Leverage Zustand-compatible middleware to enhance the debugging process and maintain a clear history of state changes.
+  - **Dev Tools Support:**
+    - Utilize Zustand DevTools or similar integrations to inspect and debug state changes in real time during development.
+    - Clearly document any custom middleware configurations and their purposes to assist future developers in understanding your state management flow.
+
+- **Best Practices & Performance Optimization:**
+  - **Essential Global State Only:**
+    - Limit the global state to essential data; derive temporary or computed values locally within components or via selectors.
+    - Regularly audit your state structure to ensure that only necessary data is kept in the global store, preventing bloat.
+  - **Performance Considerations:**
+    - Optimize state subscriptions and updates to avoid unnecessary re-renders, particularly in large or deeply nested component trees.
+    - Continuously monitor and profile state usage, adjusting the architecture as the application evolves to maintain optimal performance.
+  - **Testing & Documentation:**
+    - Write comprehensive tests for your Zustand store logic to ensure that state transitions and updates behave as expected.
+    - Maintain detailed documentation for each store, including its structure, available actions, and intended usage patterns, to facilitate future development and onboarding.

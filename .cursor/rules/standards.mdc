@@ -1,0 +1,36 @@
+---
+description: Sets core code quality rules for entire project
+globs: src/**/*.{ts,tsx,js,jsx}
+---
+### **Code Standards**
+
+#### **Code Style and Structure**
+- **Modularity & Organization:**  
+  - Write clear, modular, and maintainable code with a clear separation of concerns (UI, business logic, data access).
+  - Use functional components and React hooks wherever possible.
+- **Documentation & Readability:**  
+  - Include comments and documentation for complex logic and modules.
+  - Organize code logically (e.g., grouping by feature or domain).
+- **Best Practices:**  
+  - Follow SOLID principles and keep functions focused and single-purposed.
+  - Structure code to be easily testable and extensible.
+
+#### **Naming Conventions**
+- **Consistency:**  
+  - Use **camelCase** for variables and function names.
+  - Use **PascalCase** for React components and classes.
+  - For files and CSS classes, prefer **kebab-case** (or another consistent pattern across the project).
+- **Descriptiveness:**  
+  - Choose clear and descriptive names that convey purpose and context.
+  - Avoid abbreviations unless they are well-known within the team or domain.
+
+#### **Performance Optimization**
+- **Client-Side Optimization:**  
+  - Use React optimizations such as `useMemo` and `useCallback` to reduce unnecessary re-renders.
+  - Implement lazy loading and code splitting to improve load times.
+- **Server-Side & Database:**  
+  - Optimize data fetching with SSR, static generation, and caching strategies.
+  - Write efficient, well-indexed, and parameterized queries to maximize database performance.
+- **General Practices:**  
+  - Profile and monitor performance, addressing bottlenecks promptly.
+  - Prioritize performance without compromising readability or maintainability.
