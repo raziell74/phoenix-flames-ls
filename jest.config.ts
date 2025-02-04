@@ -13,8 +13,8 @@ const config: Config = {
   // Add more setup options before each test is run
   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
-    // ...
     "^~/(.*)$": "<rootDir>/src/$1",
+    "^lucide-react$": "<rootDir>/src/__mocks__/lucide-react.tsx",
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 };

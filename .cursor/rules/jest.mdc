@@ -12,6 +12,7 @@ globs: src/__tests__/**/*.{js,jsx,ts,tsx},jest.config.{js,ts},jest.setup.{js,ts}
 - **Integration with Next.js:**
   - Utilize libraries such as `@testing-library/react` and `@testing-library/jest-dom` to render components and simulate user interactions, ensuring tests closely mimic real user behavior.
   - Mock Next.js-specific functionalities (e.g., routing or data fetching) where necessary to isolate the component under test.
+  - For any Icons used from the `lucide-react` package, create a mock for that icon at the top of the test file.
 
 - **Test Coverage & Quality:**
   - Aim for comprehensive test coverage by writing detailed unit tests for critical functions and components, and functional tests that validate key user flows.
@@ -37,3 +38,4 @@ globs: src/__tests__/**/*.{js,jsx,ts,tsx},jest.config.{js,ts},jest.setup.{js,ts}
   - Keep tests DRY by abstracting common testing logic into reusable helper functions or custom test utilities.
   - Write clear and descriptive test cases that succinctly communicate each test’s purpose and expected outcome.
   - Maintain a balance between thoroughness and maintainability, ensuring tests are comprehensive yet not overly complex.
+  - Do not use `userEvent` use `fireEvent` instead.
