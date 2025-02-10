@@ -19,14 +19,34 @@ export function MainNav() {
   const { user, isSignedIn } = useUser();
 
   return (
-    <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 flex justify-between">
+    <div className="sticky top-0 z-50 flex w-full justify-between border-b bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <NavigationMenu>
         <NavigationMenuList className="container flex h-14 items-center">
-          <NavigationMenuItem className="flex items-center mr-4">
+          <NavigationMenuItem className="mr-4 flex items-center">
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={cn("flex items-center space-x-2")}>
                 <Flame className="h-6 w-6 text-red-500" />
                 <span className="font-bold">Phoenix Flames</span>
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+
+          {/* Add new navigation items */}
+          <NavigationMenuItem>
+            <Link href="/" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={cn("px-4 py-2 hover:text-accent-foreground/80")}
+              >
+                Home
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/about" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={cn("px-4 py-2 hover:text-accent-foreground/80")}
+              >
+                About Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -53,14 +73,19 @@ export function MainNav() {
                   <Avatar>
                     <AvatarImage src={user?.imageUrl} />
                     <AvatarFallback>
-                      {user?.firstName?.charAt(0) ?? user?.username?.charAt(0) ?? "U"}
+                      {user?.firstName?.charAt(0) ??
+                        user?.username?.charAt(0) ??
+                        "U"}
                     </AvatarFallback>
                   </Avatar>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-3 p-4">
                     <li className="row-span-3">
-                      <Link href="/profile" className="flex items-center space-x-2 p-2 hover:bg-accent rounded-md">
+                      <Link
+                        href="/profile"
+                        className="flex items-center space-x-2 rounded-md p-2 hover:bg-accent"
+                      >
                         <UserButton />
                         <span>Profile</span>
                       </Link>
@@ -75,4 +100,4 @@ export function MainNav() {
       </NavigationMenu>
     </div>
   );
-} 
+}
